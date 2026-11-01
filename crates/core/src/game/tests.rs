@@ -361,7 +361,7 @@ fn empty_draw_pile_reshuffles_play_pile() {
     let mut g = setup(2);
     let pass = action_card(&mut g, ActionKind::PassGo);
     to_hand(&mut g, 0, pass);
-    let rest: Vec<CardId> = g.draw_pile.drain(..).collect();
+    let rest = std::mem::take(&mut g.draw_pile);
     g.play_pile = rest;
     act(&mut g, 0, Action::PlayPassGo { card: pass });
     assert_eq!(g.players[0].hand.len(), 2);
