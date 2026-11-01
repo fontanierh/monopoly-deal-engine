@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monopoly Deal</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1 class="brand">Monopoly Deal</h1>
+  <div id="phase" class="phase" aria-live="polite"></div>
+  <div class="topright">
+    <span id="who" class="badge"></span>
+    <span id="conn" class="conn"></span>
+    <button id="new-game" hidden>New game</button>
+  </div>
+</header>
+<div class="layout">
+  <main class="table">
+    <div class="board">
+      <section id="opponents" class="opponents" aria-label="Other players"></section>
+      <section class="center" aria-label="Piles">
+        <div class="pile">
+          <div class="card back big"><span id="draw-count"></span></div>
+          <div class="pile-label">Draw pile</div>
+        </div>
+        <div class="pile">
+          <div id="discard-top"></div>
+          <div class="pile-label" id="discard-label">Discard</div>
+        </div>
+        <div id="turn-info" class="turn-info"></div>
+      </section>
+      <section id="me" class="me" aria-label="Your table"></section>
+    </div>
+    <section id="dock" class="dock" aria-label="Your hand and moves">
+      <div class="dock-main">
+        <div id="prompt" class="prompt"></div>
+        <div id="card-actions" class="card-actions" hidden></div>
+        <div id="error" class="error" role="alert"></div>
+        <h2 class="hand-title" id="hand-title">Your Hand</h2>
+        <div id="hand" class="hand"></div>
+      </div>
+      <div id="global-actions" class="dock-actions"></div>
+    </section>
+  </main>
+  <aside class="sidebar">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-log" class="tab active" aria-selected="true">Game Log</button>
+      <button role="tab" id="tab-players" class="tab" aria-selected="false">Players</button>
+    </div>
+    <ul id="log" class="log"></ul>
+    <ul id="roster" class="roster" hidden></ul>
+    <p class="note">Runs on this computer only. A seat link lets anyone who has it play that seat, so give each player only their own link.</p>
+  </aside>
+</div>
+<div id="m" class="m">
+  <header class="m-top">
+    <div>
+      <h1>Monopoly Deal</h1>
+      <p id="m-status" class="m-status" aria-live="polite"></p>
+    </div>
+    <span id="m-conn" class="m-live">Live</span>
+  </header>
+  <nav id="m-chips" class="m-chips" role="tablist" aria-label="Players"></nav>
+  <section class="m-table" aria-label="Selected player's table">
+    <p id="m-table-label" class="m-table-label"></p>
+    <div id="m-strip" class="m-strip"></div>
+  </section>
+  <section id="m-stage" class="m-stage" aria-live="polite"></section>
+  <div id="m-choices" class="m-choices" role="radiogroup" hidden></div>
+  <details class="m-logbox">
+    <summary>Game log</summary>
+    <ul id="m-log" class="m-log"></ul>
+  </details>
+  <section id="m-dock" class="m-dock" aria-label="Your hand and moves">
+    <p id="m-error" class="m-error" role="alert"></p>
+    <h2 id="m-hand-title" class="m-hand-title"></h2>
+    <div id="m-hand" class="m-hand"></div>
+    <div id="m-bar" class="m-bar"></div>
+  </section>
+</div>
+<script src="/app.js"></script>
+<script src="/phone.js"></script>
+</body>
+</html>

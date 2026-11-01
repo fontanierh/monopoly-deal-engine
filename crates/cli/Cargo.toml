@@ -1,0 +1,19 @@
+[package]
+name = "monopoly-deal-cli"
+description = "Command-line play and MCP stdio tool server for the Monopoly Deal engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[[bin]]
+name = "mdeal"
+path = "src/main.rs"
+
+[dependencies]
+monopoly-deal-core = { path = "../core" }
+getrandom = "0.3"
+serde.workspace = true
+serde_json.workspace = true

@@ -1,0 +1,15 @@
+[package]
+name = "monopoly-deal-core"
+description = "Rules engine for the 2008 Monopoly Deal card game"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+serde.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
